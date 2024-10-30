@@ -12,8 +12,8 @@
 # Return: dimension as a float
 def input_dimension():
     dimension = float(input('What is the dimension of the floor in feet?'))
-    while dimension < 0:
-        dimension = float(input('What is the dimension of the floor in feet? Please input a positive number.'))
+    while dimension <= 0:
+        dimension = float(input('What is the dimension of the floor in feet? Please input a valid number.'))
     return dimension
 
 # Purpose:  asks user to input a type
