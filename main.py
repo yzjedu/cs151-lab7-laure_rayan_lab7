@@ -9,28 +9,38 @@
 # Display the purpose of the program
 
 
-balance = 0
-HARDWOOD = 1.39
-CARPET = 3.99
-TILE = 4.99
 
-def calc_room_area (room_width, room_length):
-    room_length = input('What is the length of the room in feet?')
-    room_width = input('What is the width of the room in feet?')
-    floor_area = room_length * room_width
-    return floor_area
+def input_dimension():
+    dimension = input('What is the dimension of the floor in feet?')
+    return dimension
 
-def calc_floor_type (floor_type):
-    floor_type = input('Which floor type would you like for this room? The options are: \n\t1. Hardwood \n\t2.Carpet \n\t3. Tile')
+def input_type():
+    floor_type = input('What flooring type would you like for this room? The options are: \n\t1. Hardwood \n\t2.Carpet \n\t3. Tile')
+    if floor_type == 'hardwood':
+        floor_type = 1.39
+    elif floor_type == 'carpet':
+        floor_type = 3.99
+    elif floor_type == 'tile':
+        floor_type = 4.99
     return floor_type
 
-def calc_room_cost (floor_area, floor_type):
-    cost = floor_area * floor_type
-    return cost
+def calc_cost (length, width, floor_type):
+    room_cost = length * width * floor_type
+    return room_cost
 
-def sum_cost (cost):
-    balance = 0
-    balance = balance + cost
-    return balance
+def main():
+    total_cost = 0
+    num_rooms = 0
+    while num_rooms <= 5:
+        length = input_dimension()
+        width = input_dimension()
+        floor_type = input_type()
+        room_cost = calc_cost (length, width, floor_type)
+        print(room_cost)
+        total_cost += room_cost
+        num_rooms += 1
+    print(total_cost)
+
+main()
 
 
