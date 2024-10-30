@@ -39,20 +39,24 @@ def calc_cost (length, width, floor_type):
     room_cost = length * width * floor_type
     return room_cost
 
+
 # Purpose:  main function
 # Parameters: none
 # Return: none
 def main():
+#Output purpose of the program
     print('Welcome! This program finds the cost of flooring rooms based on dimensions and floor type.')
+#initialize variables
     total_cost = 0
     num_rooms = 0
+#find room cost
     while num_rooms <= 5:
         length = input_dimension()
         width = input_dimension()
         floor_type = input_type()
         room_cost = calc_cost (length, width, floor_type)
         print(room_cost)
-
+#give option to see cost of the room with a different flooring type
         option = input('Would you like to see the cost with a different floor type? y/n')
         option.lower().strip()
         while option != 'y' and option != 'n':
@@ -64,7 +68,9 @@ def main():
         elif option == 'n':
             total_cost += room_cost
             num_rooms += 1
+#output total cost to the user and end
     print(total_cost)
+    print('Thank you for using the program!')
 
 main()
 
