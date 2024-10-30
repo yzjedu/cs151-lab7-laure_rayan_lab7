@@ -22,8 +22,8 @@ def input_dimension():
 def input_type():
     floor_type = input('What flooring type would you like for this room? The options are: \n\t1. Hardwood $1.39/sqft \n\t2.Carpet $3.99/sqft \n\t3. Tile $4.99/sqft')
     floor_type.lower().strip()
-    while floor_type != 'hardwood' and floor_type != 'carpet' and floor_type != 'tile':
-        floor_type = input('Please enter the number of the option you would like as an integer.')
+    while floor_type != 'hardwood' or floor_type != 'carpet' or floor_type != 'tile':
+        floor_type = input('What flooring type would you like for this room? The options are: \n\t1. Hardwood $1.39/sqft \n\t2.Carpet $3.99/sqft \n\t3. Tile $4.99/sqft')
     if floor_type == 'hardwood':
         floor_type = 1.39
     elif floor_type == 'carpet':
